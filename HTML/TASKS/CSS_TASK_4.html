@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Task 4_Janaa Harini S</title>
+        <style>
+            .sidenav {
+                height: 75%;
+                width: 50px;
+                position: fixed;
+                top: 45px;
+                left: -30px;
+            }
+
+            .box {
+                display: block;
+                width: 150px;
+                height: 100px;
+                background-color: mediumspringgreen;
+                border-radius: 25px;
+                margin-bottom: 25px;
+            }
+
+            .box:hover {
+                transform: scale(1.2);
+            }
+
+            .box:nth-child(2) {
+                background-color: skyblue;
+            }
+
+            .box:nth-child(3) {
+                background-color: red;
+            }
+
+            .box:nth-child(4) {
+                background-color: grey;
+            }
+
+            h1 {
+                position: absolute;
+                top: 0;
+                left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+<b>TASK 4</b>
+<b>Name: Janaa Harini S</b>
+        </pre>
+        <h1>Hoverable side Navigation bars</h1>
+        <div class="sidenav">
+            <a href="https://en.wikipedia.org/wiki/Green" target="_blank" class="box"></a>
+            <a href="https://en.wikipedia.org/wiki/Blue" target="_blank" class="box"></a>
+            <a href="https://en.wikipedia.org/wiki/Red" target="_blank" class="box"></a>
+            <a href="https://en.wikipedia.org/wiki/Grey" target="_blank" class="box"></a>
+        </div>
+    </body>
+</html>
