@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Task 6_Janaa Harini S</title>
+    <style>
+        body {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            align-items: center;
+            justify-content: center;
+            background-color: #a83a59;
+            display: flex;
+            height: 800px;
+        }
+        
+        form {
+            width: 500px;
+            background-color: #722f37;
+            box-sizing: border-box;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+
+        label.label {
+            color: white;       
+            width: 120px;
+            margin-right: 10px;    
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        label.gen {
+            color: white;
+        }
+
+        input, textarea {
+            width: 300px;
+            padding: 5px;
+        }
+
+        input.reg {
+            background-color: white;
+            border: 0;
+            color: solid black;
+            width: 310px;
+            height: 40px;
+            border-color: white;
+            border-radius: 5px;
+            text-align: center;
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        input.gender {
+            width: auto;
+        }
+
+        select {
+            width: 200px;
+            height: 25px;
+        }
+
+        button {
+            width: 100px;
+            height: 35px;
+            background-color: red;
+            border-radius: 5px;
+            border-color: red;
+            color: white;
+        }
+
+    </style>
+  </head>
+  <body>
+    <form>
+        <label class="label"><b>Name:</b></label>
+        <input type="text" placeholder="Enter your name"><br></br>
+
+        <label class="label"><b>Email:</b></label>
+        <input type="text" placeholder="Enter your email"><br></br>
+
+        <label class="label"><b>Password:</b></label>
+        <input type="text"><br></br>
+
+        <label class="label"><b>Phone number:</b></label>
+        <input type="text"><br></br>
+
+        <label class="label">Gender:</label>
+        <label class="gen">Male:</label>
+        <input class="gender" type="radio">
+        <label class="gen">Female:</label>
+        <input class="gender" type="radio">
+        <label class="gen">Other:</label>
+        <input class="gender" type="radio"><br></br>
+
+        <label class="label">Language:</label>
+        <select>
+            <option>English</option>
+            <option>Tamil</option>
+            <option>Kannada</option>
+        </select><br></br>
+
+        <label class="label"><b>Zip code:</b></label>
+        <input type="text"><br></br>
+
+        <label class="label"><b>About:</b></label>
+        <textarea placeholder="Write about yourself..."></textarea><br></br>
+
+        <input class="reg" type="submit" value="Register"><br></br>
+    </form>
+  </body>
+</html>

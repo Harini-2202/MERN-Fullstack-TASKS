@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Task 5_Janaa Harini S</title>
+    <style>
+        body {
+            background-color: yellow;
+        }
+        
+        h1 {
+            color: purple;
+            position: absolute;
+            top: 25px;
+            left: 250px;
+        }
+
+        p.para {
+            color: purple;
+            position: absolute;
+            left: 250px;
+        }
+
+        p.para:nth-of-type(1) {
+            top: 75px;           
+        }
+
+        p.para:nth-of-type(2){
+            top: 100px;
+        }
+
+        p.para:nth-of-type(3){
+            top: 210px;
+            font-family: fantasy;
+        }
+
+        hr {
+            position: fixed;
+            top: 200px;
+            left: 250px;
+            color: purple;
+            width: 80%;
+            height: 1px;
+            background-color: purple;
+        }
+
+        .box {
+            display: block;
+            width: 145px;
+            height: 20px;
+            margin-bottom: 25px;
+            background-color: white;
+            margin: 8px 0;
+            padding: 5px;
+            border-right: 16px solid black;
+        }
+
+        .box:hover {
+            transform: scale(1.2);
+        }  
+    </style>
+  </head>
+  <body>
+    <pre>
+<b>TASK 5</b>
+<b>Name: Janaa Harini S</b>
+        </pre>
+    <h1>My first styled page</h1>
+    <p class="para">Welcome to my styled page!</p>
+    <p class="para">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi labore
+      sunt odit facilis veritatis, sequi similique, consequatur deleniti id,
+      voluptatum soluta deserunt voluptate culpa laborum accusantium.
+      Consectetur dicta eum quae!
+    </p>
+    <hr>
+    <p class="para">Made 16 June, 2024</p>
+    <div>
+        <ul class="sidebar">
+            <li class="box"><a href="Home.html">Home Page</a></li>
+            <li class="box"><a href="Musings.html">Musings</a></li>
+            <li class="box"><a href="MyTown.html">My Town</a></li>
+            <li class="box"><a href="Links.html">Links</a></li>
+        </ul>
+    </div>
+  </body>
+</html>
