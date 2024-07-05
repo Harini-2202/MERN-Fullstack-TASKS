@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabetize String</title>
+</head>
+<body>
+  <h1>Alphabetize String</h1>
+  
+  <label for="inputString">Enter a string:</label>
+  <input type="text" id="inputString">
+  <button onclick="displayAlphabetizedString()">Alphabetize</button>
+  
+  <p>Alphabetized String: <span id="output"></span></p>
+
+  <script>
+    function alphabetizeString(str) {
+      let charArray = str.split('');
+      
+      charArray.sort();
+      
+      let sortedStr = charArray.join('');
+      
+      return sortedStr;
+    }
+
+    function displayAlphabetizedString() {
+      let inputStr = document.getElementById('inputString').value;
+      let result = alphabetizeString(inputStr);
+      document.getElementById('output').innerText = result;
+    }
+  </script>
+</body>
+</html>

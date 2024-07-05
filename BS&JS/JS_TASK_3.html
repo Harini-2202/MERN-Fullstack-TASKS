@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication and Division</title>
+</head>
+<body>
+  <h1>Multiplication and Division</h1>
+  
+  <label for="num1">Enter first number:</label>
+  <input type="number" id="num1"><br></br>
+  
+  <label for="num2">Enter second number:</label>
+  <input type="number" id="num2"><br></br>
+  
+  <button onclick="calculate()">Calculate</button>
+  
+  <p>Multiplication Result: <span id="multiplicationResult"></span></p>
+  <p>Division Result: <span id="divisionResult"></span></p>
+
+  <script>
+    function calculate() {
+      let num1 = parseFloat(document.getElementById('num1').value);
+      let num2 = parseFloat(document.getElementById('num2').value);
+      
+      let multiplicationResult = num1 * num2;
+      let divisionResult = num1 / num2;
+      
+      document.getElementById('multiplicationResult').innerText = multiplicationResult;
+      document.getElementById('divisionResult').innerText = divisionResult;
+    }
+  </script>
+</body>
+</html>

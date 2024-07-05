@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .outer-div {
+      margin-left: 20em;
+      margin-top: 20px;
+    }
+    .box {
+      display: flex;
+      align-items: center;
+    }
+    .box span, input, textarea {
+      margin-left: 10px;
+    }
+    textarea {
+      width: 20%;
+      height: 80px;
+    }
+    .box label {
+      width: 26%;
+      text-align: right;
+      font-weight: bold;
+    }
+    .error {
+      color: rgb(216, 20, 20);
+      display: none;
+    }
+    .input-error {
+      border: 2px solid rgb(216, 20, 20);
+    }
+    .btn {
+      margin-left: 27%;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border: 1px solid gray;
+      border-radius: 4px;
+      background-color: rgb(233, 232, 232);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-div">
+    <form id="myForm" onsubmit="return validateForm()">
+      <div class="box">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" oninput="validateField('name')" />
+        <span class="error" id="nameError">This field is required</span>
+      </div>
+      <br />
+      <div class="box">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" oninput="validateField('email')" />
+        <span class="error" id="emailError">A valid email address is required</span>
+      </div>
+      <br />
+      <div class="box">
+        <label for="web">Website:</label>
+        <input type="url" id="web" name="web" oninput="validateField('web')" />
+        <span class="error" id="webError">A valid URL is required</span>
+      </div>
+      <br />
+      <div class="box">
+        <label for="mgs">Message:</label>
+        <textarea name="mgs" id="mgs" oninput="validateField('mgs')"></textarea>
+        <span class="error" id="mgsError">This field is required</span>
+      </div>
+      <br />
+      <input class="btn" type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <script>
+    function validateField(fieldId) {
+      const field = document.getElementById(fieldId);
+      const errorSpan = document.getElementById(`${fieldId}Error`);
+      const value = field.value;
+
+      if (!value) {
+        field.classList.add("input-error");
+        errorSpan.style.display = 'inline';
+      } else {
+        field.classList.remove("input-error");
+        errorSpan.style.display = 'none';
+      }
+
+      if (fieldId === 'email' && value) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+          field.classList.add("input-error");
+          errorSpan.textContent = 'Please enter a valid email address';
+          errorSpan.style.display = 'inline';
+        } else {
+          errorSpan.textContent = 'A valid email address is required';
+          field.classList.remove("input-error");
+          errorSpan.style.display = 'none';
+        }
+      }
+
+      if (fieldId === 'web' && value) {
+        try {
+          new URL(value);
+          field.classList.remove("input-error");
+          errorSpan.style.display = 'none';
+        } catch (e) {
+          field.classList.add("input-error");
+          errorSpan.textContent = 'Please enter a valid URL';
+          errorSpan.style.display = 'inline';
+        }
+      }
+    }
+
+    function validateForm() {
+      let isValid = true;
+
+      const fields = ['name', 'email', 'web', 'mgs'];
+
+      fields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        const errorSpan = document.getElementById(`${fieldId}Error`);
+        const value = field.value;
+
+        if (!value) {
+          field.classList.add("input-error");
+          errorSpan.style.display = 'inline';
+          isValid = false;
+        } else {
+          field.classList.remove("input-error");
+          errorSpan.style.display = 'none';
+        }
+
+        if (fieldId === 'email' && value) {
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(value)) {
+            field.classList.add("input-error");
+            errorSpan.textContent = 'Please enter a valid email address';
+            errorSpan.style.display = 'inline';
+            isValid = false;
+          }
+        }
+
+        if (fieldId === 'web' && value) {
+          try {
+            new URL(value);
+          } catch (e) {
+            field.classList.add("input-error");
+            errorSpan.textContent = 'Please enter a valid URL';
+            errorSpan.style.display = 'inline';
+            isValid = false;
+          }
+        }
+      });
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>

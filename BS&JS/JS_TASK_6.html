@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Login</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .outer-box {
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .field input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .field span {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 3px 0 0 3px;
+    }
+    button {
+      width: 100%;
+      border: 1px solid blue;
+      border-radius: 3px;
+      background-color: blue;
+      padding: 7px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 15px;
+    }
+    .link-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-box p, .footer-box a {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .input-group-prepend .input-group-text {
+      border-radius: 3px 0 0 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-box">
+    <div style="text-align: center">
+      <h1>Instagram</h1>
+    </div>
+    <form id="signInForm">
+      <div class="field input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="fn">
+            <i class="fas fa-user"></i>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" id="username" aria-describedby="fn" required />
+      </div>
+      <div class="field input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="ps">
+            <i class="fas fa-lock"></i>
+          </span>
+        </div>
+        <input type="password" class="form-control" placeholder="Password" id="password" aria-describedby="ps" required />
+      </div>
+      <button type="submit">Log in</button>
+    </form>
+    <div class="link-box">
+      <div>
+        <input type="checkbox" /> Remember me
+      </div>
+      <a href="#">Forgot Password?</a>
+    </div>
+    <hr />
+    <div class="footer-box">
+      <p>Don't have an account? <a href="#">Sign up here.</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signInForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      
+      if (username && password) {
+        alert('Logging in as ' + username);
+      } else {
+        alert('Please fill in both fields');
+      }
+    });
+  </script>
+</body>
+</html>
